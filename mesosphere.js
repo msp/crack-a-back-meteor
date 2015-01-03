@@ -3,8 +3,6 @@
   validation to work.
  */
 
-// Meteor.subscribe("Person"); // in client only
-
 // Meso exmaple taken from : https://github.com/copleykj/meso-test
 
 Mesosphere({
@@ -49,6 +47,8 @@ Meteor.methods({
               console.log(result);
               //The list of errors is available on `error.invalidKeys` or by calling Books.simpleSchema().namedContext().invalidKeys()
             });
+
+            Router.go('/people');
         }else{
             console.log("Errors");
             _(errors).each( function( value, key ) {
